@@ -1,0 +1,20 @@
+.contactItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btnDelete {
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 10px;
+  border: 2px solid rgb(255, 0, 0);
+  border-radius: 4px;
+  color: rgb(255, 253, 253);
+  background-color: black;
+}
+
+.btnDelete:hover {
+  background-color: rgb(0, 0, 0);
+}
