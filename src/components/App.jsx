@@ -1,18 +1,19 @@
-import { ContactForm } from "./ContactForm/ContactForm";
-import { ContactList } from './ContactList/ContactList';
+import InputForm from './InputForm/InputForm';
+import PhoneList from './PhoneList/PhoneList';
+import Filter from './Filter/Filter';
+import { Container, MyHeader } from './styled';
 
-import { Filter } from './Filter/Filter';
-
-
-export const App = () => {
+const App = () => {
   return (
-    <div>
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <h2>Contacts</h2>
-      <Filter/>
-      <ContactList/>
-    </div>
-  )
-}
+    <Container>
+      <MyHeader>Phonebook</MyHeader>
+      <InputForm />
 
+      <MyHeader>Contacts</MyHeader>
+      <Filter />
+      <PhoneList />
+    </Container>
+  );
+};
+
+export default App;

@@ -1,20 +1,24 @@
-
 import { useDispatch, useSelector } from 'react-redux';
-import { getFilter } from 'redux/contact-selector';
-import { filterContacts } from 'redux/contact-actions';
-import styles from './Filter.module.css';
+import { changeFilter } from 'Redux/Action/actions';
+import { Container, MyInput, MyP } from './styled';
 
-export const Filter = () => {
-  const filter = useSelector(getFilter);
+function Filter() {
+  const filter = useSelector(({ contacts: { filter } }) => filter);
   const dispatch = useDispatch();
+  const handleFilter = e =>
+    dispatch(changeFilter(e.currentTarget.value.toLowerCase()));
 
   return (
-    <label className={styles.filterLabel}>
-      <span>Find contacts by name</span>
-      <input
+    <Container>
+      <MyP>Find contacts by name</MyP>
+      <MyInput
+        type="text"
+        onChange={handleFilter}
+        placeholder="Search..."
         value={filter}
-        onChange={e => dispatch(filterContacts(e.target.value))}
       />
-    </label>
+    </Container>
   );
-};
+}
+
+export default Filter;
